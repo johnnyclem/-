@@ -15,10 +15,20 @@
 {
     [super viewDidLoad];
 
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     SKScene * scene = [_MyScene sceneWithSize:skView.bounds.size];
@@ -26,6 +36,7 @@
     
     // Present the scene.
     [skView presentScene:scene];
+
 }
 
 - (BOOL)shouldAutorotate
